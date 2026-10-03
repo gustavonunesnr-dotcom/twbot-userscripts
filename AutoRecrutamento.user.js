@@ -1,17 +1,17 @@
 // ==UserScript==
-// @name         Construtor Automático (TWBot)
+// @name         Auto Recrutamento (TWBot)
 // @namespace    twbot
 // @version      0.3.0
-// @description  Constrói seguindo um modelo de ordem, em todas as aldeias, respeitando a previsão de recursos do jogo.
+// @description  Mantém metas de tropa por grupo de aldeias, recrutando aos poucos dentro dos recursos, da população e de um teto de fila.
 // @author       TWBot
-// @match        *://*.tribalwars.com.br/game.php*screen=main*
-// @match        *://*.tribalwars.com.pt/game.php*screen=main*
-// @match        *://*.tribalwars.net/game.php*screen=main*
+// @match        *://*.tribalwars.com.br/game.php*
+// @match        *://*.tribalwars.com.pt/game.php*
+// @match        *://*.tribalwars.net/game.php*
 // @grant        GM_xmlhttpRequest
 // @run-at       document-idle
 // @connect      twbot-entrega.twbot.workers.dev
-// @downloadURL  https://raw.githubusercontent.com/gustavonunesnr-dotcom/twbot-userscripts/main/ConstrutorAutomatico.user.js
-// @updateURL    https://raw.githubusercontent.com/gustavonunesnr-dotcom/twbot-userscripts/main/ConstrutorAutomatico.user.js
+// @downloadURL  https://raw.githubusercontent.com/gustavonunesnr-dotcom/twbot-userscripts/main/AutoRecrutamento.user.js
+// @updateURL    https://raw.githubusercontent.com/gustavonunesnr-dotcom/twbot-userscripts/main/AutoRecrutamento.user.js
 // ==/UserScript==
 
 /* Gerado por build.mjs — não edite. */
@@ -19,7 +19,7 @@
   'use strict';
 
   var SERVIDOR = "https://twbot-entrega.twbot.workers.dev/auth";
-  var FERRAMENTA = "ConstrutorAutomatico";
+  var FERRAMENTA = "AutoRecrutamento";
 
   // Com @grant, o Tampermonkey isola o script: window deixa de ser a janela
   // da página e game_data some. unsafeWindow é a página de verdade — e é nela

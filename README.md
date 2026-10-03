@@ -4,23 +4,45 @@ Ferramentas de automação para Tribal Wars, em userscript.
 
 | Ferramenta | Onde aparece no jogo | O que faz |
 |---|---|---|
-| [Auto Farming Inteligente](AutoFarmingInteligente.user.js) | Assistente de Saque | Saqueia com ritmo humanizado e aprende o mínimo de tropas de cada aldeia |
-| [Construtor Automático](ConstrutorAutomatico.user.js) | Edifício Principal | Constrói seguindo modelo ou missões, e coleta recompensas que cabem no armazém |
-| [Agendador de Comandos](AgendadorDeComandos.user.js) | Bloco de Notas | Envia ataque e apoio na hora marcada, no milésimo |
+| Auto Farming Inteligente | Assistente de Saque | Saqueia com ritmo humanizado e aprende o mínimo de tropas de cada aldeia |
+| Construtor Automático | Edifício Principal | Constrói seguindo modelo ou missões, e coleta recompensas que cabem no armazém |
+| Agendador de Comandos | Bloco de Notas | Envia ataque e apoio na hora marcada, no milésimo |
+| Auto Recrutamento | Recrutar | Mantém metas de tropa por grupo de aldeias, dentro dos recursos e da fila |
 
 ## Instalar
 
 1. Instale o [Tampermonkey](https://www.tampermonkey.net/) no seu navegador.
-2. Clique no nome da ferramenta na tabela acima.
+2. Abra o [TWBot.user.js](TWBot.user.js).
 3. Clique em **Raw** e o Tampermonkey abre a tela de instalação.
 
-As atualizações são automáticas — não é preciso reinstalar quando sair versão nova.
+É um script só para todas as ferramentas: ele carrega as que a sua licença cobre, cada uma na
+tela dela. As atualizações são automáticas — não é preciso reinstalar quando sair versão nova.
+
+### Se você tem os scripts antigos
+
+Antes havia um script por ferramenta. Instale o TWBot e, no painel do Tampermonkey, remova os
+antigos (Auto Farming Inteligente, Construtor Automático, Agendador de Comandos, Auto Recrutamento).
+Enquanto eles estiverem lá, não atrapalham: com o TWBot instalado, ficam parados.
 
 ## Como funciona
 
-O que você instala é um carregador de 40 linhas, legível. Ele busca a ferramenta
-no servidor a cada carregamento de página. Isso significa que correções chegam
-sem você fazer nada.
+O que você instala é um carregador curto e legível. Ele busca as ferramentas no servidor e guarda
+uma cópia no navegador, que só é baixada de novo quando sai versão nova. A licença é conferida a
+cada página.
+
+Antes de executar qualquer coisa, o carregador confere a assinatura digital do código. Só roda o
+que foi assinado pelo TWBot: se alguém invadisse o servidor, não conseguiria mandar código para o
+seu navegador.
+
+Se aparecer um captcha numa aba, as ferramentas param em todas as abas daquele mundo.
+
+## Controlar pelo celular
+
+O ícone de celular no cabeçalho de qualquer ferramenta liga o painel web: dele
+você vê o que cada ferramenta está fazendo, inicia e para, acompanha o registro
+e recebe aviso de ataque chegando e de captcha. O bot continua rodando no PC; o
+celular só comanda. O acesso nasce desligado, e quem tiver o link comanda o bot
+da conta, então não o compartilhe.
 
 ## Precisão do agendador
 
@@ -37,7 +59,7 @@ vez de ficar preso numa média.
 ## Aviso
 
 Automatizar o jogo é contra as regras da InnoGames, e o risco de punição é de
-quem usa. O agendamento de comandos é o mais fiscalizado dos três.
+quem usa. O agendamento de comandos é o mais fiscalizado de todos.
 
 Estas ferramentas não escondem nada do jogo: não interferem na verificação
 anti-bot nem na telemetria. Se aparecer um captcha, elas param.

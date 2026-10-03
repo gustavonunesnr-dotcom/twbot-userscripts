@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Agendador de Comandos (TWBot)
 // @namespace    twbot
-// @version      0.1.0
+// @version      0.3.0
 // @description  Agenda ataques e apoios por horário de chegada, com saída calculada e compensação de latência.
 // @author       TWBot
 // @match        *://*.tribalwars.com.br/game.php*
@@ -27,10 +27,39 @@
   // existem lá.
   var pagina = (typeof unsafeWindow !== 'undefined') ? unsafeWindow : window;
 
+  // O carregador único (TWBot) já cuida desta página.
+  if (pagina.TWBotCarregador) return;
+
   var gd = pagina.game_data;
   if (!gd || !gd.player) {
     console.warn('[TWBot] game_data não encontrado; nada a fazer nesta página.');
     return;
+  }
+
+  // Ponte para o painel web: o bundle roda na página, onde não existe
+  // GM_xmlhttpRequest. Presa ao servidor do TWBot. Vários carregadores na
+  // mesma aba reaproveitam a primeira.
+  if (!pagina.TWBotPonte) {
+    pagina.TWBotPonte = {
+      servidor: "https://twbot-entrega.twbot.workers.dev",
+      pedir: function (caminho, corpo, pronto) {
+        if (!/^[/][a-z]+$/.test(caminho)) { pronto(new Error('caminho inválido')); return; }
+        GM_xmlhttpRequest({
+          method: 'POST',
+          url: "https://twbot-entrega.twbot.workers.dev" + caminho,
+          headers: { 'Content-Type': 'application/json' },
+          data: JSON.stringify(corpo),
+          timeout: 20000,
+          onload: function (r) {
+            var d = null;
+            try { d = JSON.parse(r.responseText); } catch (e) {}
+            pronto(null, { status: r.status, dados: d });
+          },
+          onerror: function () { pronto(new Error('sem conexão com o servidor')); },
+          ontimeout: function () { pronto(new Error('o servidor demorou demais')); }
+        });
+      }
+    };
   }
 
   GM_xmlhttpRequest({
@@ -70,15 +99,30 @@
       } catch (e) {
         console.error('[TWBot] o código lançou erro:', e);
       }
+
+      avisarTroca();
     },
     onerror: function () { avisar('não consegui falar com o servidor de licença.'); },
     ontimeout: function () { avisar('o servidor de licença demorou demais.'); },
     timeout: 15000
   });
 
+  /** Uma vez por dia, por todas as ferramentas antigas juntas. */
+  function avisarTroca() {
+    try {
+      var hoje = new Date().toDateString();
+      if (localStorage.getItem('twbot:aviso-carregador') === hoje) return;
+      localStorage.setItem('twbot:aviso-carregador', hoje);
+    } catch (e) { return; }
+
+    avisar('O TWBot agora tem <b>um carregador só</b> para todas as ferramentas. ' +
+           'Instale o TWBot e remova os antigos: github.com/gustavonunesnr-dotcom/twbot-userscripts', true);
+  }
+
   function avisar(msg, brando) {
-    if (window.UI && UI.ErrorMessage && !brando) UI.ErrorMessage(msg, 6000);
-    else if (window.UI && UI.SuccessMessage) UI.SuccessMessage(msg, 6000);
+    var UI = pagina.UI;
+    if (UI && UI.ErrorMessage && !brando) UI.ErrorMessage(msg, 6000);
+    else if (UI && UI.SuccessMessage) UI.SuccessMessage(msg, 6000);
     console.warn('[TWBot] ' + msg.replace(/<[^>]*>/g, ''));
   }
 })();
