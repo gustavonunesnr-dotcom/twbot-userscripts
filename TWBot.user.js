@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         TWBot
 // @namespace    twbot
-// @version      0.4.0
-// @description  Carrega as ferramentas do TWBot liberadas para a sua conta: Auto Farming, Construtor, Recrutamento e Agendador.
+// @version      0.5.0
+// @description  Carrega as ferramentas do TWBot liberadas para a sua conta: Auto Farming, Construtor, Recrutamento, Agendador e Defesa.
 // @author       TWBot
 // @match        *://*.tribalwars.com.br/game.php*
 // @match        *://*.tribalwars.com.pt/game.php*
@@ -46,7 +46,7 @@
   'use strict';
 
   var SERVIDOR = "https://twbot-entrega.twbot.workers.dev/carregar";
-  var VERSAO = "0.4.0";
+  var VERSAO = "0.5.0";
 
   // Chave pública do TWBot (ECDSA P-256, SPKI em base64). Só roda código
   // assinado pela chave privada correspondente.
