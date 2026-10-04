@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Recrutamento (TWBot)
 // @namespace    twbot
-// @version      0.3.0
+// @version      0.4.0
 // @description  Mantém metas de tropa por grupo de aldeias, recrutando aos poucos dentro dos recursos, da população e de um teto de fila.
 // @author       TWBot
 // @match        *://*.tribalwars.com.br/game.php*
