@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Construtor Automático (TWBot)
 // @namespace    twbot
-// @version      0.9.0
+// @version      0.9.1
 // @description  Constrói seguindo um modelo de ordem, em todas as aldeias, respeitando a previsão de recursos do jogo.
 // @author       TWBot
 // @match        *://*.tribalwars.com.br/game.php*
