@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Farming Inteligente (TWBot)
 // @namespace    twbot
-// @version      0.6.1
+// @version      0.6.2
 // @description  Farm automático com planejamento por distância, controle de chegadas e ritmo humanizado.
 // @author       TWBot
 // @match        *://*.tribalwars.com.br/game.php*
