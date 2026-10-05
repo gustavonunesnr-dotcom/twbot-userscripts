@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Agendador de Comandos (TWBot)
 // @namespace    twbot
-// @version      0.9.1
+// @version      0.9.2
 // @description  Agenda ataques e apoios por horário de chegada, com saída calculada e compensação de latência.
 // @author       TWBot
 // @match        *://*.tribalwars.com.br/game.php*
