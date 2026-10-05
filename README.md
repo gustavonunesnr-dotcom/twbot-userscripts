@@ -16,8 +16,10 @@ Ferramentas de automação para Tribal Wars, em userscript.
 2. Abra o [TWBot.user.js](TWBot.user.js).
 3. Clique em **Raw** e o Tampermonkey abre a tela de instalação.
 
-É um script só para todas as ferramentas: ele carrega as que a sua licença cobre, cada uma na
-tela dela. As atualizações são automáticas — não é preciso reinstalar quando sair versão nova.
+É um script só para todas as ferramentas. Elas aparecem no ícone de cada uma na barra lateral, em
+qualquer tela, e rodam em qualquer aba do jogo: ligada fica ligada até você parar, e se a aba mudar de
+tela ou fechar, outra aba aberta continua. As atualizações são automáticas — não é preciso reinstalar
+quando sair versão nova.
 
 ### Se você tem os scripts antigos
 
