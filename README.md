@@ -8,7 +8,7 @@ Ferramentas de automação para Tribal Wars, em userscript.
 | Construtor Automático | Edifício Principal | Constrói seguindo modelo ou missões, e coleta recompensas que cabem no armazém |
 | Agendador de Comandos | Bloco de Notas | Envia ataque e apoio na hora marcada, no milésimo |
 | Auto Recrutamento | Recrutar | Mantém metas de tropa por grupo de aldeias, dentro dos recursos e da fila |
-| Defesa | Chegando | Etiqueta cada ataque recebido com a unidade (pelo tempo de viagem) e marca trens de nobre |
+| Defesa | Chegando | Etiqueta cada ataque recebido com a unidade (pelo tempo de viagem ou, exata, pela torre de vigia), marca trens de nobre e avisa provável fake |
 
 ## Instalar
 
