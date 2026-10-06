@@ -9,7 +9,7 @@ Ferramentas de automação para Tribal Wars, em userscript.
 | Agendador de Comandos | Bloco de Notas | Envia ataque e apoio na hora marcada, no milésimo |
 | Auto Recrutamento | Recrutar | Mantém metas de tropa por grupo de aldeias, dentro dos recursos e da fila |
 | Defesa | Chegando | Etiqueta cada ataque recebido com a unidade (pelo tempo de viagem ou, exata, pela torre de vigia), marca trens de nobre, avisa provável fake, dá a nota de risco de cada aldeia (quantos fulls aguenta e se segura os ataques que vêm) e esquiva um ataque com um clique (a tropa sai 1 min antes e volta logo depois) |
-| Renomear aldeias | Combinado / Produção | Renomeia sozinho as aldeias conquistadas: o número seguinte e o seu texto ("097 Noob") |
+| Renomear aldeias | Combinado / Produção | Põe todas as aldeias no nome que você escolhe ("001 Nobre", "002 Nobre"…) e renomeia sozinho as conquistadas |
 
 ## Instalar
 
