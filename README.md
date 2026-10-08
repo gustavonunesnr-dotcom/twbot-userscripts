@@ -6,7 +6,7 @@ Ferramentas de automação para Tribal Wars, em userscript.
 |---|---|---|
 | Auto Farming Inteligente | Assistente de Saque | Saqueia com ritmo humanizado e aprende o mínimo de tropas de cada aldeia |
 | Construtor Automático | Edifício Principal | Constrói seguindo modelo ou missões, e coleta recompensas que cabem no armazém |
-| Agendador de Comandos | Bloco de Notas | Envia ataque e apoio na hora marcada, no milésimo |
+| Agendador de Comandos | Bloco de Notas | Envia ataque e apoio na hora marcada, no milésimo; em massa, agenda de uma vez vários alvos a partir de várias aldeias |
 | Auto Recrutamento | Recrutar | Mantém metas de tropa por grupo de aldeias, dentro dos recursos e da fila |
 | Defesa | Chegando | Etiqueta cada ataque recebido com a unidade (pelo tempo de viagem ou, exata, pela torre de vigia), marca trens de nobre, avisa provável fake, dá a nota de risco de cada aldeia (quantos fulls aguenta e se segura os ataques que vêm) esquiva um ataque com um clique (a tropa sai 1 min antes e volta logo depois), mostra a nota da aldeia de origem (ATK, DFS) e grava a nota pelo relatório |
 | Renomear aldeias | Combinado / Produção | Põe todas as aldeias no nome que você escolhe ("001 Nobre", "002 Nobre"…) e renomeia sozinho as conquistadas |
